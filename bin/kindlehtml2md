@@ -14,9 +14,13 @@ while read line
 do
     # トークン列の処理系
     if [[ $line =~ '<'/[^\>]*'>' ]]; then
-        echo
+        if [[ $line =~ '<'/div.*'>' ]]; then
+            echo
+        fi
     elif [[ $line =~ '<'[^\>]*'>' ]]; then
-        echo
+        if [[ $line =~ '<'div.*'>' ]]; then
+            echo
+        fi
     else
         echo -n $line
     fi
