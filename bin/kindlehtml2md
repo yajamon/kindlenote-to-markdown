@@ -22,7 +22,7 @@ do
             echo
         fi
     else
-        echo -n $line
+        echo -n "$line"
     fi
 done
 })
