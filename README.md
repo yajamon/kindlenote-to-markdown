@@ -1,0 +1,2 @@
+# kindlenote-to-markdown
+KindleノートブックのエクスポートをMarkdownに変換するコマンド
