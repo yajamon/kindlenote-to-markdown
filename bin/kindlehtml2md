@@ -31,6 +31,9 @@ do
         elif [[ $line = '<div class="bookTitle">' ]]; then
             echo -n '# '
             printStart=1
+        elif [[ $line = '<div class="authors">' ]]; then
+            echo
+            echo -n '著者: '
         elif [[ $line =~ '<'div.*'>' ]]; then
             echo "$line"
         fi
