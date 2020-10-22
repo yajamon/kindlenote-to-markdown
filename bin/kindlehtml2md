@@ -18,8 +18,17 @@ do
             echo
         fi
     elif [[ $line =~ '<'[^\>]*'>' ]]; then
-        if [[ $line =~ '<'div.*'>' ]]; then
+        if [[ $line = '<div class="noteHeading">' ]]; then
             echo
+            echo -n '### '
+        elif [[ $line = '<div class="sectionHeading">' ]]; then
+            echo
+            echo -n '## '
+        elif [[ $line = '<div class="bookTitle">' ]]; then
+            echo
+            echo -n '# '
+        elif [[ $line =~ '<'div.*'>' ]]; then
+            echo "$line"
         fi
     else
         echo -n "$line"
