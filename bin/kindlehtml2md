@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# HTMLタグとその内容を改行区切りのトークン列のようなものと見なす
+cat - | perl -pe 's/(<.*?>)/\n\1\n/g' | perl -pe 's/^\s*$//g' | ({ while read line
+do
+    # トークン列の処理系
+    echo $line
+done
+})
+
