@@ -14,7 +14,7 @@ while read line
 do
     # トークン列の処理系
     if [[ $line =~ '<'/[^\>]*'>' ]]; then
-        if [[ $line =~ '<'/div.*'>' ]]; then
+        if [ $line = '</div>' ]; then
             echo
         fi
     elif [[ $line =~ '<'[^\>]*'>' ]]; then
