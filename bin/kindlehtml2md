@@ -4,7 +4,13 @@
 cat - | perl -pe 's/(<.*?>)/\n\1\n/g' | perl -pe 's/^\s*$//g' | ({ while read line
 do
     # トークン列の処理系
-    echo $line
+    if [[ $line =~ '<'/[^\>]*'>' ]]; then
+        echo
+    elif [[ $line =~ '<'[^\>]*'>' ]]; then
+        echo
+    else
+        echo -n $line
+    fi
 done
 })
 
