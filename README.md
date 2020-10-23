@@ -6,3 +6,12 @@ KindleノートブックのエクスポートをMarkdownに変換するコマン
 ```console
 ./bin/kindlehtml2md <exported.html
 ```
+
+## Setup
+
+example:
+
+```console
+cd /path/to/this-directory
+ln -s $(pwd)/bin/kindlehtml2md ~/bin/kindlehtml2md
+```
